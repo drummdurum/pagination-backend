@@ -23,15 +23,5 @@ public class BookController {
     return bookService.getAllBooks(pageable);
   }
 
-  // You can skip the previous method and use this one instead if filtering is needed.
-  @GetMapping("/filtered")
-  public Page<Book> getAllBooksFiltered(Pageable pageable,
-                                        @RequestParam(name = "author", required = false) String author,
-                                        @RequestParam(name = "title", required = false) String title
-  )
-  {
-    return bookService.getFilteredBooksV2(pageable, title, author);
-  }
-
 }
 
